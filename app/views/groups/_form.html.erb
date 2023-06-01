@@ -1,37 +1,10 @@
-<%= form_with(model: group) do |form| %>
-  <% if group.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
-
-      <ul>
-        <% group.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<%= form_with model: @group, url: user_groups_path do |form| %>
+    <div class="field">
+      <%= form.text_field :name, placeholder: "Name" %>
     </div>
+
+    <div class="field">
+      <%= form.text_field :icon, placeholder: "Icon link" %>
+    </div>
+    <%= form.submit "Create Category", class: "splash-button create-category" %>
   <% end %>
-
-  <div>
-    <%= form.label :author_id, style: "display: block" %>
-    <%= form.number_field :author_id %>
-  </div>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
-  </div>
-
-  <div>
-    <%= form.label :created_at_id, style: "display: block" %>
-    <%= form.number_field :created_at_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>

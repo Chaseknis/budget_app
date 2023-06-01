@@ -1,14 +1,22 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Groups</h1>
-
-<div id="groups">
-  <% @groups.each do |group| %>
-    <%= render group %>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
-  <% end %>
+<div class="most-recent">
+  <p>Most recent</p>
 </div>
 
-<%= link_to "New group", new_group_path %>
+<div class="category-container">
+  <% @groups.each do |group| %>
+    <% if current_user.id == group.author_id %>
+      <%= link_to user_group_path(group.author, group) do %>
+        <div class="category">
+          <div><%= image_tag group.icon %></div>
+          <div class="category-name">
+            <p class="c-name"> <%= group.name %> </p>
+            <p class="c-time"> <%= group.created_at.strftime("%d %b %Y") %> </p>
+          </div>
+          <div> <p class="c-amount"> $<%= group.expenses.sum(:amount) %> </p></div>
+        </div>
+      <% end %>
+    <% end %>
+    <% end %>
+    
+</div>
+<div class="new-cat"><%= link_to "Add a new category", new_user_group_path(@user) %></div>

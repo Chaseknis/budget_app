@@ -1,10 +1,27 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @group %>
-
-<div>
-  <%= link_to "Edit this group", edit_group_path(@group) %> |
-  <%= link_to "Back to groups", groups_path %>
-
-  <%= button_to "Destroy this group", @group, method: :delete %>
+<div class="category">
+  <div><%= image_tag @group.icon %></div>
+  <div class="category-name">
+    <p class="c-name"> <%= @group.name %> </p>
+    <p class="c-time"> <%= @group.created_at.strftime("%d %b %Y") %> </p>
+  </div>
+  <div> <p class="c-amount"> $<%= @group.expenses.sum(:amount) %> </p></div>
 </div>
+
+
+
+<div class="transaction-container">
+  <% @group.expenses.order(created_at: :desc).each do |expense| %>
+    <% if current_user.id == expense.author_id %>
+        <div class="category">
+          <div class="category-name">
+            <p class="c-name"> <%= expense.name %> </p>
+            <p class="c-time"> <%= expense.created_at.strftime("%d %b %Y") %> </p>
+          </div>
+          <div> <p class="c-amount"> $<%= expense.amount %> </p></div>
+        </div>
+        <% end %>
+         <% end %>
+      <div><%= link_to "Back to categories", unauthenticated_root_path %></div>
+</div>
+
+<div class="new-cat"><%= link_to "Add a new transaction", new_user_expense_path(@group.author) %></div>

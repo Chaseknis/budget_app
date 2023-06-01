@@ -4,8 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
+  has_many :expenses, dependent: :destroy
+  has_many :groups, foreign_key: :author_id
+
   validates :name, presence: true
 
-  has_many :expenses
-  has_many :groups
+  def email_verified?
+    true
+  end
 end

@@ -1,3 +1,5 @@
 class SplashController < ApplicationController
-  def home; end
+  def home
+    render 'splash'
+  end
 end
