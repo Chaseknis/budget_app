@@ -11,6 +11,79 @@
   </head>
 
   <body>
+  <header>
+    <div class="categories-header">
+      <% if current_user %>
+        <div class="mobile-menu">
+            <div id="hamburger_menu" class="hamburger_menu">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+          <nav class="menu">
+              <ul>
+                <li class="menu-name">
+                  <i class="material-icons"></i>
+                  <p><%= current_user.name %><?p>
+                </li>
+                <li class="menu-li"> 
+                  <i class="material-icons"></i>
+                  <%= link_to "Edit Account", edit_user_registration_path %>
+                </li>
+                <li class="menu-li"> 
+                  <i class="material-icons"></i>
+                  <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+                </li>
+              </ul>
+          </nav>
+        </div>
+      <% else %>
+        <div class="logo">
+            <h1>XBud-<span>G</span>et</h1>
+        </div>
+      <% end %>
+    </div>
+  </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
+
+<script>
+const hamburger = document.querySelector('.hamburger_menu');
+const navMenu = document.querySelector('.nav_menu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
+
+document.querySelectorAll('.menu_link').forEach((n) => n.addEventListener('click', () => {
+  hamburger.classList.remove('active');
+  navMenu.classList.remove('active');
+}));
+
+window.addEventListener('resize', () => {
+  hamburger.classList.remove('active');
+  navMenu.classList.remove('active');
+});
+
+  // function initMenu() {
+  //   const ham = document.querySelector('.ham');
+  //   const menu = document.querySelector('.menu');
+
+  //   ham.addEventListener('click', () => {
+  //     menu.classList.toggle('menu--open');
+  //   });
+
+  //   const closeMenuBtn = document.querySelector('.close-x');
+  //   closeMenuBtn.classList.add("close-menu");
+
+  //   closeMenuBtn.addEventListener("click", () => {
+  //     menu.classList.toggle('menu--open');
+  //   });
+  // }
+
+  // initMenu();
+</script>

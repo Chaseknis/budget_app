@@ -13,3 +13,190 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  color: #111165;
+}
+
+h2 {
+  font-size: 24px;
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+.hamburger_menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 15%;
+}
+
+.line {
+  width: 30px;
+  height: 6px;
+  background-color: #111165;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger_menu.active .line:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+  z-index: 100;
+}
+
+.hamburger_menu.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger_menu.active .line:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+  z-index: 100;
+}
+
+/* Landing Page */
+
+.landing_page_container {
+  width: auto;
+  height: 95vh;
+  margin: auto;
+  background-color: #c9baba;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.logo {
+  height: 5vh;
+  padding: 0 24px;
+  background-color: #111165;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo h1 {
+  font-size: 14px;
+  color: #c9baba;
+}
+
+span {
+  color: #ff04d1;
+  text-decoration: line-through;
+}
+
+/* Landing Page Buttons */
+
+.landing_page_container p {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.landing_page_container p a,
+.sign_up_button,
+.login_button {
+  position: relative;
+  color: #111165;
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  background-color: whitesmoke;
+  cursor: pointer;
+  user-select: none;
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px;
+}
+
+.landing_page_container p a::before,
+.landing_page_container p a::after,
+.sign_up_button::before,
+.sign_up_button::after,
+.login_button::before,
+.login_button::after {
+  content: '';
+  position: absolute;
+  transition: inherit;
+  z-index: -1;
+}
+
+.landing_page_container p a:hover,
+.sign_up_button:hover,
+.login_button:hover {
+  color: #9d9a9a;
+  transition-delay: 0.5s;
+}
+
+.landing_page_container p a:hover::before,
+.sign_up_button:hover::before,
+.login_button:hover::before {
+  transition-delay: 0s;
+}
+
+.landing_page_container p a:hover::after,
+.sign_up_button:hover::after,
+.login_button:hover::after {
+  background: #111165;
+  transition-delay: 0.35s;
+}
+
+/* Sign up/Login Pages */
+
+.sign_up_container,
+.login_container {
+  height: 95vh;
+  padding: 0 24px;
+  background-color: #c9baba;
+}
+
+.sign_up_form_wrapper,
+.login_form_wrapper {
+  width: 100%;
+  margin: auto;
+  padding: 2rem 1rem;
+  border-radius: 5px;
+  background-color: #111165;
+}
+
+.field {
+  padding-bottom: 1rem;
+}
+
+.table_input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 5px;
+  border: 1px solid #c9baba;
+  outline: none;
+  background: none;
+}
+
+.label {
+  padding: 1rem 0;
+}
+
+.links_container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+.links,
+.check_box_label {
+  color: #c9baba;
+}
