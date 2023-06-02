@@ -9,7 +9,10 @@ class GroupsController < ApplicationController
   end
 
   # GET /groups/1 or /groups/1.json
-  def show; end
+  def show
+    @user = User.find(params[:user_id])
+    @group = @user.groups.find(params[:id])
+  end
 
   # GET /groups/new
   def new

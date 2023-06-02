@@ -12,27 +12,27 @@
 
   <body>
   <header>
-    <div class="categories-header">
+    <div class="categories_container">
       <% if current_user %>
-        <div class="mobile-menu">
+        <div class="mobile_menu_wrapper">
             <div id="hamburger_menu" class="hamburger_menu">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
             </div>
-          <nav class="menu">
-              <ul>
-                <li class="menu-name">
-                  <i class="material-icons"></i>
+          <nav class="nav_menu">
+              <ul class="nav_ul">
+                <li class="menu_link user_profile_wrapper">
+                  <div class="user_icon_wrapper">
+                    <i class="fa fa-user"></i>
+                  </div>
                   <p><%= current_user.name %><?p>
                 </li>
-                <li class="menu-li"> 
-                  <i class="material-icons"></i>
-                  <%= link_to "Edit Account", edit_user_registration_path %>
+                <li class="menu_link"> 
+                  <%= link_to "Edit Account", edit_user_registration_path, class:"links"%>
                 </li>
-                <li class="menu-li"> 
-                  <i class="material-icons"></i>
-                  <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+                <li class="menu_link"> 
+                  <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class:"sign_out_button" %>
                 </li>
               </ul>
           </nav>
@@ -52,7 +52,7 @@
 
 <script>
 const hamburger = document.querySelector('.hamburger_menu');
-const navMenu = document.querySelector('.nav_menu');
+const navMenu = document.querySelector('.nav_ul');
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
@@ -68,22 +68,4 @@ window.addEventListener('resize', () => {
   hamburger.classList.remove('active');
   navMenu.classList.remove('active');
 });
-
-  // function initMenu() {
-  //   const ham = document.querySelector('.ham');
-  //   const menu = document.querySelector('.menu');
-
-  //   ham.addEventListener('click', () => {
-  //     menu.classList.toggle('menu--open');
-  //   });
-
-  //   const closeMenuBtn = document.querySelector('.close-x');
-  //   closeMenuBtn.classList.add("close-menu");
-
-  //   closeMenuBtn.addEventListener("click", () => {
-  //     menu.classList.toggle('menu--open');
-  //   });
-  // }
-
-  // initMenu();
 </script>
