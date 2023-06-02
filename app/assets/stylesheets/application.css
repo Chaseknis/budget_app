@@ -34,47 +34,74 @@ h2 {
 }
 
 .categories_container {
-    padding: 12pt 24px;
+  padding: 12pt 24px;
+}
+
+.landing_page_container p {
+  width: 100%;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10rem;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.most_recent_wrapper p {
+  text-align: center;
+  color: #fff;
 }
 
 .nav_ul {
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  width: 100%;
+  height: 100vh;
+  padding: 0 24px;
+  align-items: center;
+  gap: 1rem;
+  background-color: #3778c2;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  text-align: start;
+  top: 0;
+  padding-top: 100px;
+  left: -100%;
+  z-index: 10;
+  transition: 0.3s;
 }
 
 .nav_ul li {
-    list-style: none;
+  list-style: none;
 }
 
 .nav_ul li p {
-    font-size: 25px;
-    color: #fff;
-    text-align: center;
+  font-size: 25px;
+  color: #fff;
+  text-align: center;
 }
 
 .user_profile_wrapper {
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .user_icon_wrapper {
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .user_icon_wrapper .fa-user {
-    color: #3778c2;
+  color: #3778c2;
 }
 
 .hamburger_menu {
@@ -106,24 +133,9 @@ h2 {
   z-index: 100;
 }
 
-.nav_ul {
-    width: 100%;
-    height: 100vh;
-    background-color: #3778c2;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    text-align: start;
-    top: 0;
-    padding-top: 100px;
-    left: -100%;
-    z-index: 10;
-    transition: 0.3s;
-  }
-
-  .nav_ul.active {
-    left: 0;
-  }
+.nav_ul.active {
+  left: 0;
+}
 
 /* Landing Page */
 
@@ -159,21 +171,10 @@ span {
 
 /* Landing Page Buttons */
 
-.landing_page_container p {
-  width: 100%;
-  padding: 0 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10rem;
-  margin-bottom: 2rem;
-  gap: 2rem;
-}
-
 .landing_page_container p a,
 .form_button {
-    width: 100%;
-    padding: 20px 20px;
+  width: 100%;
+  padding: 20px 20px;
   position: relative;
   color: white;
   text-decoration: none;
@@ -186,10 +187,10 @@ span {
   cursor: pointer;
   user-select: none;
   transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
-  }
+}
 
-  .sign_out_button {
-    padding: 12px 20px;
+.sign_out_button {
+  padding: 12px 20px;
   position: relative;
   color: #3778c2;
   text-decoration: none;
@@ -202,8 +203,7 @@ span {
   cursor: pointer;
   user-select: none;
   transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
-
-  }
+}
 
 .landing_page_container p a::before,
 .landing_page_container p a::after,
@@ -298,14 +298,10 @@ span {
 /* Categories page */
 
 .most_recent_wrapper {
-    background-color: #3778c2;
-    padding: 1rem 24px;
+  background-color: #3778c2;
+  padding: 1rem 24px;
 }
 
-.most_recent_wrapper p{
-  text-align: center;
-  color: #fff;
-}
 .category_wrapper,
 .transaction_wrapper {
   height: 78.5vh;
@@ -314,20 +310,20 @@ span {
   gap: 1rem;
   overflow-y: auto;
 }
+
 .category {
   padding: 12px;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0, rgba(27, 31, 35, 0.15) 0 0 0 1px;
 }
 
 .new_category {
   align-self: flex-end;
   padding: 20px;
   background-color: #5fb523;
-
 }
 
 .footer_links {
@@ -356,8 +352,7 @@ span {
   padding: 1rem 0;
 }
 
-
-.new_category_wrapper{
+.new_category_wrapper {
   width: 100%;
   margin: auto;
   padding: 2rem 1rem;
@@ -378,9 +373,9 @@ span {
   border: 1px solid #d3d3d3;
   background-color: #f5f5f5;
 }
+
 .editing_user_container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-
