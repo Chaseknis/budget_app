@@ -1,22 +1,27 @@
-<div class="most-recent">
-  <p>Most recent</p>
-</div>
+<div class="most_recent_container">
+<div class="most_recent_wrapper">
+    <p>Most recent</p>
+  </div>
 
-<div class="category-container">
-  <% @groups.each do |group| %>
-    <% if current_user.id == group.author_id %>
-      <%= link_to user_group_path(group.author, group) do %>
-        <div class="category">
-          <div><%= image_tag group.icon %></div>
-          <div class="category-name">
-            <p class="c-name"> <%= group.name %> </p>
-            <p class="c-time"> <%= group.created_at.strftime("%d %b %Y") %> </p>
+  <div class="category_wrapper">
+    <% @groups.each do |group| %>
+      <% if current_user.id == group.author_id %>
+        <%= link_to user_group_path(group.author, group) do %>
+          <div class="category">
+            <div><%= image_tag group.icon %></div>
+            <div class="category_details_wrapper">
+              <p class="name"> <%= group.name %> </p>
+              <p class="time"> <%= group.created_at.strftime("%d %b %Y") %> </p>
+            </div>
+            <%# <div> <p class="amount"> $<%= group.expenses.sum(:amount) </p></div> %>
           </div>
-          <div> <p class="c-amount"> $<%= group.expenses.sum(:amount) %> </p></div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-    <% end %>
-    
+      <% end %>
+      
+  </div>
+  <div class="new_category">
+    <%= link_to "Add a new category", new_user_group_path(@user), class:"footer_links" %>
+  </div>
+
 </div>
-<div class="new-cat"><%= link_to "Add a new category", new_user_group_path(@user) %></div>
