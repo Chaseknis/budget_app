@@ -25,9 +25,10 @@
 
 > mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
-## 📹 video presentation <a name="video-presentation"></a>
+## 📹 video presentation <a name="Presentation"></a>
 
-- <a href="">Video presentation link</a>
+[Video Presentation]()
+
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -35,19 +36,19 @@
 - <a href="https://www.postgresql.org/">Postgresql</a>
 - <a href="https://rspec.info/">Rspec</a>
 
-### :rocket: Live Demo <a name="live-demo"></a>
+## 📹 Live Demo <a name="live-demo"></a>
 
-  - <a href="">Live Link</a>
+  [Live Link](https://budget-app-st2t.onrender.com)
 
 ### Key Features <a name="key-features"></a>
 
-- [x] User can create an account
-- [x] User can login
-- [x] User can create a transaction
-- [x] user can create a category
-- [x] user can view all transactions based on category
-- [x] mobile first design
-- [x] Rspec test for models, controllers and views
+- User can create an account
+- User can login
+- User can create a transaction
+- user can create a category
+- user can view all transactions based on category
+- Responsive design
+- Rspec test for models, controllers and views
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
