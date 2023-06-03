@@ -1,9 +1,8 @@
 class Expense < ApplicationRecord
-  belongs_to :author, foreign_key: :author_id, class_name: 'User'
-
-  validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :name, presence: true
+  validates :amount, presence: true, numericality: { greater_than_or_equal_to: 0 }
 
-  has_many :expense_groups, dependent: :destroy
-  has_many :groups, through: :expense_groups, dependent: :destroy
+  belongs_to :users, class_name: 'User', foreign_key: 'author_id'
+
+  has_many :groups
 end

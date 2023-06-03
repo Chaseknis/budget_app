@@ -2,10 +2,14 @@ require 'rails_helper'
 
 RSpec.describe Expense, type: :model do
   before(:each) do
-    @user = User.create(name: 'Test user', email: 'test@gmail.com', password: '000000',
-                        password_confirmation: '000000', confirmation_token: nil, confirmed_at: Time.now)
-    @group = Group.create(name: 'Test group', icon: 'http://example.com', author_id: @user.id)
-    @expense = Expense.create(name: 'Test expense', amount: 100, author_id: @user.id)
+    @user = User.create(name: 'Test user', email: 'test444@gmail.com', password: '123456',
+                        password_confirmation: '123456')
+    file_path = Rails.root.join('app', 'assets', 'images', 'back.png')
+    file = File.open(file_path)
+    @group = Group.new(name: 'Test group', author_id: @user.id)
+    @group.icon.attach(io: file, filename: 'back.png', content_type: 'image/png')
+    @group.save
+    @expense = Expense.create(name: 'Test expense', amount: 100.0, author_id: @user.id, groups_id: @group.id)
   end
   it 'is valid with valid attributes' do
     expect(@expense).to be_valid

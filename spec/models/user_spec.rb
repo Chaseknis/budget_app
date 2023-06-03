@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before(:each) do
-    @user = User.create(name: 'Test user', email: 'test444@gmail.com', password: '000000',
-                        password_confirmation: '000000', confirmation_token: nil, confirmed_at: Time.now)
+    @user = User.create(name: 'Test user', email: 'test444@gmail.com', password: '123456',
+                        password_confirmation: '123456')
   end
   it 'is valid with valid attributes' do
     expect(@user).to be_valid
@@ -21,11 +21,11 @@ RSpec.describe User, type: :model do
     expect(@user).to_not be_valid
   end
   it 'is not valid with a password confirmation that does not match' do
-    @user.password_confirmation = '00000'
+    @user.password_confirmation = '12345'
     expect(@user).to_not be_valid
   end
   it 'is not valid with a password shorter than 6 characters' do
-    @user.password = '00000'
+    @user.password = '12345'
     expect(@user).to_not be_valid
   end
 end

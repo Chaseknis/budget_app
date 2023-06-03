@@ -1,75 +1,24 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_user!, except: [:splash]
-  # load_and_authorize_resource except: [:splash]
-
-  # GET /groups or /groups.json
   def index
-    @groups = current_user.groups.order(created_at: :desc)
-    @user = current_user
+    @categories = current_user.groups.order(created_at: :desc)
   end
 
-  # GET /groups/1 or /groups/1.json
-  def show
-    @user = User.find(params[:user_id])
-    @group = @user.groups.find(params[:id])
-  end
+  def new; end
 
-  # GET /groups/new
-  def new
-    @group = current_user.groups.new
-  end
-
-  # GET /groups/1/edit
-  def edit; end
-
-  # POST /groups or /groups.json
   def create
-    @group = Group.new(group_params)
-    @group.author_id = current_user.id
-
-    respond_to do |format|
-      if @group.save
-        format.html { redirect_to authenticated_root_path, notice: 'Group was successfully created.' }
-        format.json { render :show, status: :created, location: @group }
-      else
-        format.html { render :new }
-        format.json { render json: @group.errors }
-      end
+    @category = current_user.groups.new(category_params)
+    if @category.save
+      redirect_to groups_path, notice: 'category created successfuly'
+    else
+      redirect_to new_group_path, alert: 'Oops something went wrong'
     end
   end
 
-  # PATCH/PUT /groups/1 or /groups/1.json
-  def update
-    respond_to do |format|
-      if @group.update(group_params)
-        format.html { redirect_to group_url(@group), notice: 'Group was successfully updated.' }
-        format.json { render :show, status: :ok, location: @group }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /groups/1 or /groups/1.json
-  def destroy
-    @group.destroy
-
-    respond_to do |format|
-      format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  def login_page; end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_group
-    @group = Group.find(params[:id])
-  end
-
-  # Only allow a list of trusted parameters through.
-  def group_params
-    params.require(:group).permit(:name, :icon)
+  def category_params
+    params.required(:group).permit(:name, :icon)
   end
 end

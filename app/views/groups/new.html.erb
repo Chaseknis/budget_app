@@ -1,7 +1,14 @@
+<div id="groups-new">
+    <%= form_with model: Group.new, url: groups_path(current_user) do |form| %>
+        <div id="div">
+            <%= form.text_field :name, placeholder: "Name"%>
+        </div>
+        <div>
+            <%= form.label :icon, "Choose Image:" %>
+            <%= form.file_field :icon %>
+        </div>
+        <div id="actions">
+            <%= form.submit "Save", id: "button"%>
+        </div>
+    <% end %>
 <div>
-  <h1 class="category_wrapper_h1">New <span>G</span>roup</h1>
-
-  <%= render "form", group: @group %>
-
-  <br>
-</div>

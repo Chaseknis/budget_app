@@ -1,390 +1,406 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- *= require font-awesome
- */
-
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: lighter;
 }
 
-h1,
-h2 {
-  color: #111165;
+img {
+  height: 100%;
 }
 
-h2 {
-  font-size: 24px;
-  text-align: center;
-  padding-top: 4rem;
-  padding-bottom: 2rem;
-}
-
-.categories_container {
-  padding: 12pt 24px;
-}
-
-.landing_page_container p {
-  width: 100%;
-  padding: 0 24px;
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10rem;
-  margin-bottom: 2rem;
-  gap: 2rem;
+  max-width: 426px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-.most_recent_wrapper p {
-  text-align: center;
-  color: #fff;
-}
-
-.nav_ul {
+#login_page-container {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   height: 100vh;
-  padding: 0 24px;
-  align-items: center;
-  gap: 1rem;
-  background-color: #3778c2;
+  background-color: rgba(255, 255, 255, 0.826);
+}
+
+#login_page-container h1 {
   display: flex;
-  flex-direction: column;
-  position: absolute;
-  text-align: start;
-  top: 0;
-  padding-top: 100px;
-  left: -100%;
-  z-index: 10;
-  transition: 0.3s;
+  justify-content: center;
+  width: 92%;
+  margin-bottom: 20vh;
+  color: rgba(0, 0, 0, 0.498);
 }
 
-.nav_ul li {
-  list-style: none;
-}
-
-.nav_ul li p {
-  font-size: 25px;
-  color: #fff;
-  text-align: center;
-}
-
-.user_profile_wrapper {
-  background-color: transparent;
+#login_page-container div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-}
-
-.user_icon_wrapper {
-  width: 50px;
-  height: 50px;
-  background-color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.user_icon_wrapper .fa-user {
-  color: #3778c2;
-}
-
-.hamburger_menu {
+  margin-bottom: 10vh;
   width: 100%;
+}
+
+#login_page-container div a {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  justify-content: center;
+  width: 100%;
+  text-decoration: none;
 }
 
-.line {
-  width: 30px;
-  height: 3px;
-  background-color: #3778c2;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-.hamburger_menu.active .line:nth-child(1) {
-  transform: translateY(11px) rotate(45deg);
-  z-index: 100;
-}
-
-.hamburger_menu.active .line:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger_menu.active .line:nth-child(3) {
-  transform: translateY(-11px) rotate(-45deg);
-  z-index: 100;
-}
-
-.nav_ul.active {
-  left: 0;
-}
-
-/* Landing Page */
-
-.landing_page_container {
-  width: auto;
-  height: 90vh;
-  margin: auto;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.logo {
+#login_page-container button {
+  width: 95%;
   height: 5vh;
-  padding: 0 24px;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  margin-top: 1vh;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0.604);
+  border-radius: 5px;
 }
 
-.logo h1 {
-  font-size: 14px;
-  color: #3778c2;
-}
-
-span {
-  color: #ff04d1;
-  text-decoration: line-through;
-}
-
-/* Landing Page Buttons */
-
-.landing_page_container p a,
-.form_button {
-  width: 100%;
-  padding: 20px 20px;
-  position: relative;
+#login_page-container #login-button {
+  background-color: #3778c2;
   color: white;
-  text-decoration: none;
-  text-align: center;
-  border-radius: 5px;
-  border: none;
-  font-size: 12px;
-  text-transform: uppercase;
-  background-color: #3778c2;
-  cursor: pointer;
-  user-select: none;
-  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.sign_out_button {
-  padding: 12px 20px;
-  position: relative;
-  color: #3778c2;
-  text-decoration: none;
-  text-align: center;
-  border-radius: 5px;
-  border: none;
-  font-size: 12px;
-  text-transform: uppercase;
-  background-color: #fff;
-  cursor: pointer;
-  user-select: none;
-  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
-}
-
-.landing_page_container p a::before,
-.landing_page_container p a::after,
-.form_button::before,
-.form_button::after,
-.sign_out_button::before,
-.sign_out_button::after {
-  content: '';
-  position: absolute;
-  transition: inherit;
-  z-index: -1;
-}
-
-.landing_page_container p a:hover,
-.form_button:hover,
-.sign_out_button:hover {
-  color: #9d9a9a;
-  transition-delay: 0.5s;
-}
-
-.landing_page_container p a:hover::before,
-.form_button:hover::before,
-.sign_out_button:hover::before {
-  transition-delay: 0s;
-}
-
-.landing_page_container p a:hover::after,
-.form_button:hover::after,
-.sign_out_button:hover::after {
-  background: #111165;
-  transition-delay: 0.35s;
-}
-
-/* Sign up/Login Pages */
-
-.sign_up_container,
-.login_container,
-.resend_confirmation_container,
-.forgot_password_container,
-.new_category_container,
-.editing_user_container,
-.change_password_container,
-.new_expense_container,
-.expenses_container {
-  height: 95vh;
-  padding: 0 24px;
-  background-color: #fff;
-}
-
-.sign_up_form_wrapper,
-.login_form_wrapper,
-.resend_confirmation_form_wrapper,
-.forgot_password_form_wrapper,
-.new_category_form_wrapper,
-.category_wrapper,
-.transaction_wrapper,
-.editing_user_form_wrapper,
-.change_password_form_wrapper,
-.new_expense_form_wrapper {
+header {
   width: 100%;
-  padding: 2rem 1rem;
-  border-radius: 5px;
-  border: 1px solid #d3d3d3;
-  background-color: #f5f5f5;
+  position: fixed;
 }
 
-.field {
-  padding-bottom: 1rem;
-}
-
-.table_input {
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   width: 100%;
-  padding: 10px 12px;
-  border-radius: 5px;
-  border: 1px solid #d3d3d3;
-  outline: none;
-  background: none;
-}
-
-.label {
-  padding: 1rem 0;
-}
-
-.links_container {
-  display: flex;
-  flex-direction: column;
-  padding-top: 1rem;
-}
-
-.links,
-.check_box_label {
-  color: #d3d3d3;
-}
-
-/* Categories page */
-
-.most_recent_wrapper {
+  height: 6vh;
+  color: rgba(255, 255, 255, 0.945);
   background-color: #3778c2;
-  padding: 1rem 24px;
 }
 
-.category_wrapper,
-.transaction_wrapper {
-  height: 78.5vh;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  overflow-y: auto;
-}
-
-.category {
-  padding: 12px;
-  background-color: #fff;
+header nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0, rgba(27, 31, 35, 0.15) 0 0 0 1px;
+  flex-direction: row;
+  width: 95%;
+  list-style: none;
 }
 
-.new_category {
-  align-self: flex-end;
-  padding: 20px;
+header nav ul li img {
+  height: 3vh;
+}
+
+header nav ul li button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 15px;
+  color: white;
+}
+
+#login-form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 7vh;
+  background-color: white;
+}
+
+#login-form-container form {
+  width: 100%;
+}
+
+#login-form-container form div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#login-form-container form div input {
+  width: 95%;
+  height: 5vh;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 1vh;
+}
+
+#login-form-container .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 7vh;
+  background-color: #5fb523;
+  margin-bottom: 3vh;
+}
+
+#login-form-container #submit-btn {
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0);
+  margin-bottom: 0;
+  width: 95%;
+  color: white;
+}
+
+#groups-index {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 7vh;
+  margin-bottom: 9vh;
+  min-height: 89vh;
+}
+
+#groups-index ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#groups-index ul a {
+  width: 95%;
+  text-decoration: none;
+  color: black;
+}
+
+#groups-index ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 11vh;
+  margin-top: 1vh;
+  background-color: white;
+  border-radius: 3px;
+}
+
+#groups-index ul li div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;
+  color: rgba(0, 0, 0, 0.505);
+}
+
+#groups-index ul li img {
+  height: 10vh;
+  width: 10vh;
+}
+
+#groups-index ul li h3 {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+#groups-index #Add-new-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 7vh;
+  margin-top: 3vh;
+  position: fixed;
+  bottom: 0;
   background-color: #5fb523;
 }
 
-.footer_links {
+#groups-index #Add-new-btn .button_to {
+  width: 95%;
+}
+
+#groups-index #Add-new-btn #button {
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0);
   width: 100%;
+  height: 5vh;
+  color: white;
+}
+
+#groups-new {
+  width: 100%;
+  background-color: white;
+  margin-top: 10vh;
+}
+
+#groups-new form {
   display: flex;
   align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+#groups-new form #div {
+  display: flex;
   justify-content: center;
-  color: #fff;
+  width: 100%;
+}
+
+#groups-new form #div input {
+  width: 95%;
+  height: 6vh;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 2vh;
+}
+
+#groups-new form div input {
+  border-bottom: 1px solid black;
+}
+
+#groups-new form #actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 7vh;
+  margin-top: 2vh;
+  background-color: #5fb523;
+}
+
+#groups-new form #actions #button {
+  width: 95%;
+  height: 5vh;
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+#expense-index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 6vh;
+}
+
+#expense-index #expenses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  background-color: white;
+  margin: 10px;
+}
+
+#expense-index #expenses #category-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 95%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.534);
+}
+
+#expense-index #expenses #category-info img {
+  width: 10vh;
+  height: 10vh;
+  margin: 10px 10px 10px 0;
+}
+
+#expense-index #expenses ul {
+  margin-top: 1vh;
+  width: 95%;
+  background-color: white;
+  border-radius: 3px;
+  list-style: none;
+}
+
+#expense-index #expenses ul li {
+  margin-top: 1vh;
+  width: 100%;
+  background-color: white;
+  border-radius: 3px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.534);
+  opacity: 70%;
+}
+
+#expense-index #expenses ul li img {
+  width: 3vh;
+  height: 3vh;
+}
+
+#expense-index #total-amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 7vh;
+  background-color: white;
+  opacity: 70%;
+}
+
+#expense-index a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 7vh;
+  background-color: #5fb523;
+  position: fixed;
+  bottom: 0;
   text-decoration: none;
-  border: 1px solid #fff;
-  padding: 10px;
 }
 
-.category .name {
-  font-size: 18px;
-  color: #9d9a9a;
+#expense-index a button {
+  width: 95%;
+  height: 5vh;
+  background-color: #0000;
+  border: 1px solid white;
+  color: white;
 }
 
-.category .time {
-  font-size: 12px;
-  color: #9d9a9a;
-}
-
-.category_wrapper_h1 {
-  text-align: center;
-  padding: 1rem 0;
-}
-
-.new_category_wrapper {
+#expenses-new {
+  margin-top: 10vh;
   width: 100%;
-  margin: auto;
-  padding: 2rem 1rem;
-  border-radius: 5px;
-  border: 1px solid #d3d3d3;
-  background-color: #f5f5f5;
+  background-color: white;
 }
 
-.cancel_account_wrapper {
-  width: 100%;
-  padding: 2rem 1rem;
+#expenses-new form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+}
+
+#expenses-new form div {
+  display: flex;
   justify-content: center;
-  gap: 1rem;
-  border-radius: 5px;
-  border: 1px solid #d3d3d3;
-  background-color: #f5f5f5;
+  align-items: center;
+  width: 100%;
 }
 
-.editing_user_container {
+#expenses-new form div input {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 7vh;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
 }
 
-.select_category_field {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 0;
+#expenses-new form #actions {
+  width: 100%;
+  background-color: #5fb523;
+  height: 7vh;
+  margin-top: 10vh;
 }
+
+#expenses-new form #actions #button {
+  width: 95%;
+  background-color: #60b52300;
+  height: 5vh;
+  border: 1px solid white;
+  color: white;
+}
+
