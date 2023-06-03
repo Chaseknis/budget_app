@@ -1,7 +1,7 @@
 databases:
-  - name: postgres
-    databaseName: budget_app
-    user: budget_app
+  - name: budget-app
+    databaseName: budget_app_w56m
+    user: budget_app_w56m_user
 services:
   - type: web
     name: budget_app
@@ -11,7 +11,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: budget_app
+          name: budget-app
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
