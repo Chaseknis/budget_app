@@ -12,5 +12,4 @@ RSpec.describe 'Groups', type: :feature do
     fill_in 'Password', with: @user.password
     click_button 'Log in'
   end
- 
 end
