@@ -2,12 +2,12 @@ databases:
   - name: postgres
     databaseName: budget_app
     user: budget_app
-
 services:
   - type: web
     name: budget_app
     env: ruby
     buildCommand: "./bin/render-build.sh"
+    startCommand: bundle exec rails s
     envVars:
       - key: DATABASE_URL
         fromDatabase:
