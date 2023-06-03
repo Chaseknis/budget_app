@@ -19,6 +19,29 @@ body {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
+#expenses-new form div input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 7vh;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+#expense-index a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 7vh;
+  background-color: #5fb523;
+  position: fixed;
+  bottom: 0;
+  text-decoration: none;
+}
+
 #login_page-container {
   justify-content: center;
   display: flex;
@@ -50,6 +73,13 @@ body {
   justify-content: center;
   width: 100%;
   text-decoration: none;
+}
+
+header nav ul li button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 15px;
+  color: white;
 }
 
 #login_page-container button {
@@ -96,13 +126,6 @@ header nav ul li img {
   height: 3vh;
 }
 
-header nav ul li button {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  font-size: 15px;
-  color: white;
-}
-
 #login-form-container {
   display: flex;
   align-items: center;
@@ -129,6 +152,13 @@ header nav ul li button {
   border: none;
   border-bottom: 1px solid black;
   margin-bottom: 1vh;
+}
+
+#expenses-new form div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 #login-form-container .actions {
@@ -231,6 +261,10 @@ header nav ul li button {
   margin-top: 10vh;
 }
 
+#groups-new form div input {
+  border-bottom: 1px solid black;
+}
+
 #groups-new form {
   display: flex;
   align-items: center;
@@ -251,10 +285,6 @@ header nav ul li button {
   border: none;
   border-bottom: 1px solid black;
   margin-bottom: 2vh;
-}
-
-#groups-new form div input {
-  border-bottom: 1px solid black;
 }
 
 #groups-new form #actions {
@@ -300,6 +330,21 @@ header nav ul li button {
   border-bottom: 1px solid rgba(0, 0, 0, 0.534);
 }
 
+#expense-index #expenses ul li img {
+  width: 3vh;
+  height: 3vh;
+}
+
+#expense-index #total-amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 7vh;
+  background-color: white;
+  opacity: 70%;
+}
+
 #expense-index #expenses #category-info img {
   width: 10vh;
   height: 10vh;
@@ -323,33 +368,6 @@ header nav ul li button {
   opacity: 70%;
 }
 
-#expense-index #expenses ul li img {
-  width: 3vh;
-  height: 3vh;
-}
-
-#expense-index #total-amount {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 7vh;
-  background-color: white;
-  opacity: 70%;
-}
-
-#expense-index a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 7vh;
-  background-color: #5fb523;
-  position: fixed;
-  bottom: 0;
-  text-decoration: none;
-}
-
 #expense-index a button {
   width: 95%;
   height: 5vh;
@@ -371,24 +389,6 @@ header nav ul li button {
   width: 100%;
 }
 
-#expenses-new form div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-#expenses-new form div input {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 95%;
-  height: 7vh;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid black;
-}
-
 #expenses-new form #actions {
   width: 100%;
   background-color: #5fb523;
@@ -403,4 +403,3 @@ header nav ul li button {
   border: 1px solid white;
   color: white;
 }
-

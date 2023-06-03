@@ -75,9 +75,9 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'dotenv-rails', groups: %i[development test]
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem 'rails-controller-testing'
-  gem 'dotenv-rails', groups: %i[development test]
 end
