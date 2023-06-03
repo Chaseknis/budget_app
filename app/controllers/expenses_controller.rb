@@ -13,7 +13,7 @@ class ExpensesController < ApplicationController
   def new
     @expense = Expense.new
     @groups = Group.all
-  end  
+  end
 
   # GET /expenses/1/edit
   def edit; end
@@ -26,7 +26,7 @@ class ExpensesController < ApplicationController
 
     respond_to do |format|
       if @expense.save
-        format.html { redirect_to user_expenses_path(@user), notice: "Expense created successfully." }
+        format.html { redirect_to user_expenses_path(@user), notice: 'Expense created successfully.' }
         format.json { render :show, status: :created, location: @expense }
       else
         @groups = Group.all
@@ -69,5 +69,5 @@ class ExpensesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def expense_params
     params.require(:expense).permit(:user_id, :name, :amount, :created_at_id, :group_id)
-  end  
+  end
 end
