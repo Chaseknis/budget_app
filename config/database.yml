@@ -85,7 +85,7 @@ test:
 #
 production:
   <<: *default
-  postgres://budget_app_w56m_user:K3PO38PmhBMP9ILAULsOIdUV488aqABb@dpg-chtj205269vccp66up40-a/budget_app_w56m
+  url: postgres://budget_app_w56m_user:K3PO38PmhBMP9ILAULsOIdUV488aqABb@dpg-chtj205269vccp66up40-a/budget_app_w56m
   database: budget_app_production
   username: budget_app
   password: <%= ENV["BUDGET_APP_DATABASE_PASSWORD"] %>
