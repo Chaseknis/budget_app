@@ -245,7 +245,9 @@ span {
 .forgot_password_container,
 .new_category_container,
 .editing_user_container,
-.change_password_container {
+.change_password_container,
+.new_expense_container,
+.expenses_container {
   height: 95vh;
   padding: 0 24px;
   background-color: #fff;
@@ -259,7 +261,8 @@ span {
 .category_wrapper,
 .transaction_wrapper,
 .editing_user_form_wrapper,
-.change_password_form_wrapper {
+.change_password_form_wrapper,
+.new_expense_form_wrapper {
   width: 100%;
   padding: 2rem 1rem;
   border-radius: 5px;
@@ -378,4 +381,10 @@ span {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.select_category_field {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
 }

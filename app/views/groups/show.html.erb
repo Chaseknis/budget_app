@@ -1,25 +1,29 @@
-<div class="category">
-  <div><%= image_tag @group.icon %></div>
-  <div class="category-name">
-    <p class="name"> <%= @group.name %> </p>
-    <p class="time"> <%= @group.created_at.strftime("%d %b %Y") %> </p>
+<div class="category_detail_wrapper">
+  <div class="category">
+    <div><%= image_tag @group.icon %></div>
+    <div class="category_name">
+      <p class="name"> <%= @group.name %> </p>
+      <p class="time"> <%= @group.created_at.strftime("%d %b %Y") %> </p>
+    </div>
+    <div> <p class="amount"> $<%= @group.expenses.sum(:amount) %> </p></div>
   </div>
-  <div> <p class="amount"> $<%= @group.expenses.sum(:amount) %> </p></div>
-</div>
 
-<div class="transaction_wrapper">
-  <% @group.expenses.order(created_at: :desc).each do |expense| %>
-    <% if current_user.id == expense.author_id %>
-        <div class="category">
-          <div class="category_details_wrapper">
-            <p class="name"> <%= expense.name %> </p>
-            <p class="time"> <%= expense.created_at.strftime("%d %b %Y") %> </p>
+  <div class="transaction_wrapper">
+    <% @group.expenses.order(created_at: :desc).each do |expense| %>
+      <% if current_user.id == expense.author_id %>
+          <div class="category">
+            <div class="category_details_wrapper">
+              <p class="name"> <%= expense.name %> </p>
+              <p class="time"> <%= expense.created_at.strftime("%d %b %Y") %> </p>
+            </div>
+            <div> <p class="amount"> $<%= @group.expenses.sum(:amount) %> </p></div>
           </div>
-          <div> <p class="amount"> $<%= expense.amount %> </p></div>
-        </div>
-        <% end %>
-         <% end %>
-      <div><%= link_to "Back to categories", unauthenticated_root_path %></div>
-</div>
+          <% end %>
+          <% end %>
+        <div><%= link_to "Back to categories", unauthenticated_root_path, class: "links" %></div>
+  </div>
 
-<div class="new-cat"><%= link_to "Add a new transaction", new_user_expense_path(@group.author) %></div>
+  <div class="new_category">
+    <%= link_to "Add a new transaction", new_user_expense_path(@group.author), class:"footer_links" %>
+  </div>
+</div>
